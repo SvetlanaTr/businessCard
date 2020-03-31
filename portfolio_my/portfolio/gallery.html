@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/header_footer.css">
+    <link rel="stylesheet" href="css/style_standart.css">
+    <title>Portfolio</title>
+</head>
+<body>
+ 
+<header>
+    <h1><p>PORTFOLIO</p></h1>
+<nav role="navigation">
+  <ul>
+    <li><a>MENU</a>
+      <ul class="dropdown">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="gallery.html">Фотогалерея</a></li>
+        <li><a href="resume.html">Резюме</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    
+</header>
+    
+<div id="container">
+       <ul id="slider">
+            <li class="slide">
+                <img id="image" src="./css/img/gallery/photo1.jpg" onClick="randomimg(0, 9)">
+            </li>    
+       </ul>
+    
+        <div class="arrows">
+            <span class="arrow next" id="next">Вправо</span>
+            <span class="arrow prew" id="prew">Влево</span>
+        </div>
+    
+    
+</div>
+    
+<footer>
+    <div>
+    	<p>E-mail:<a href="mailto:svtrupkina@gmail.com"> svtrupkina@gmail.com</a></p>
+    	<p>Telegram:<a title="Telegram" href="tg://resolve?domain=SvetokTrue"> @SvetokTrue</a></p>
+    </div>
+</footer>
+    
+     <script language="javascript">
+      
+            var imgs = new Array('./css/img/gallery/photo1.jpg','./css/img/gallery/photo2.jpg','./css/img/gallery/photo3.jpg','./css/img/gallery/photo4.jpg',
+'./css/img/gallery/photo5.jpg','./css/img/gallery/photo6.jpg','./css/img/gallery/photo7.jpg','./css/img/gallery/photo8.jpg','./css/img/gallery/photo9.jpg');
+            
+    function randomimg( min, max) {
+        var image=document.getElementById("image");
+        var randNum = Math.floor(Math.random() * (max - min)) + min; //случайное число
+            image.src=imgs[randNum]; 
+    }
+       //кнопки навигации
+       var next = document.getElementById('next');
+var prew = document.getElementById('prew');
+
+var slides = document.getElementsByClassName('slide');
+for(var i=0; i<slides.length; i++) {
+   slides[i].style.zIndex = slides.length - i;
+}
+
+next.onclick = function () {
+    var activeEl = document.querySelector('.active');
+    if(activeEl.nextElementSibling) {
+       activeEl.style.left = "-100%";
+       activeEl.classList.remove('active');
+       activeEl.nextElementSibling.classList.add('active');
+       this.classList.remove('no_active');
+       prew.classList.remove('no_active');
+       if(!activeEl.nextElementSibling.nextElementSibling) {
+          this.classList.add('no_active');
+       }
+    }
+}
+prew.onclick = function () {
+    var activeEl = document.querySelector('.active');
+    if(activeEl.previousElementSibling) {
+       activeEl.previousElementSibling.style.left = "0%";
+       activeEl.classList.remove('active');
+       activeEl.previousElementSibling.classList.add('active');
+       this.classList.remove('no_active');
+       next.classList.remove('no_active');
+       if(!activeEl.previousElementSibling.previousElementSibling) {
+          this.classList.add('no_active');
+       }
+    }
+}
+         
+         
+    </script> 
+</body>
+
+
+</html>
+   <!--
+  
+    -->
