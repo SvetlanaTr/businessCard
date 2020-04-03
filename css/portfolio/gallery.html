@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/header_footer.css">
+    <link rel="stylesheet" href="css/style_standart.css">
+    <title>Portfolio</title>
+</head>
+<body>
+ 
+<header>
+    <h1><p>PORTFOLIO</p></h1>
+<nav role="navigation">
+  <ul>
+    <li><a>MENU</a>
+      <ul class="dropdown">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="gallery.html">Фотогалерея</a></li>
+        <li><a href="resume.html">Резюме</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    
+</header>
+    
+<div id="container">
+    <span id="slider">
+            <img id="image" src="./css/img/gallery/photo1.jpg" onClick="randomimg(0, 9);">
+    </span>
+    <form name="pic_form">
+        <p>Ширина:<input type="text" name="inputWidth" value=""></p>
+        <p>Высота:<input type="text" name="inputHeight" value=""></p>
+        <p>Рамка:<input type="text" name="inputBorder" value=""></p>
+        <input type="button" value="Изменить" onclick="pic_change();">
+    </form>    
+</div>
+    
+<footer>
+    <div>
+    	<p>E-mail:<a href="mailto:svtrupkina@gmail.com"> svtrupkina@gmail.com</a></p>
+    	<p>Telegram:<a title="Telegram" href="tg://resolve?domain=SvetokTrue"> @SvetokTrue</a></p>
+    </div>
+</footer>
+  <script language="javascript">  
+       //случайная картинка
+        var image=document.getElementById("image");
+        var imgs = new Array('./css/img/gallery/photo1.jpg','./css/img/gallery/photo2.jpg','./css/img/gallery/photo3.jpg','./css/img/gallery/photo4.jpg', './css/img/gallery/photo5.jpg','./css/img/gallery/photo6.jpg','./css/img/gallery/photo7.jpg','./css/img/gallery/photo8.jpg','./css/img/gallery/photo9.jpg');
+    function randomimg( min, max) {
+        var randNum = Math.floor(Math.random() * (max - min)) + min; //случайное число
+        image.src=imgs[randNum]; 
+    }
+</script> 
+<script language="javascript">
+        var form_var = document.forms["pic_form"];
+        var width_var = form_var.elements["inputWidth"];
+        var height_var = form_var.elements["inputHeight"];  
+        var border_var = form_var.elements["inputBorder"];
+         
+         function pic_change() {
+             image.width = width_var.value;
+             image.height = height_var.value;
+             image.border = border_var.value;
+         }
+         
+</script> 
+</body>
+
+
+</html>
+   <!--
+
+<script language="javascript">
+      //случайная картинка
+        var image=document.getElementById("image");
+        var imgs = new Array('./css/img/gallery/photo1.jpg','./css/img/gallery/photo2.jpg','./css/img/gallery/photo3.jpg','./css/img/gallery/photo4.jpg', './css/img/gallery/photo5.jpg','./css/img/gallery/photo6.jpg','./css/img/gallery/photo7.jpg','./css/img/gallery/photo8.jpg','./css/img/gallery/photo9.jpg');
+    function randomimg( min, max) {
+        var randNum = Math.floor(Math.random() * (max - min)) + min; //случайное число
+        image.src=imgs[randNum]; 
+    }
+</script> 
+<script language="javascript">
+        var form_var = document.forms["pic_form"];
+        var width_var = form_var.elements["inputWidth"];
+        var height_var = form_var.elements["inputHeight"];  
+        var border_var = form_var.elements["inputBorder"];
+         
+         function pic_change() {
+             image.width = width_var.value;
+             image.height = height_var.value;
+             image.border = border_var.value;
+         }
+         
+</script> 
+
+
+
+
+
+<ul id="slider">
+        <li class="slide">
+
+     </li>
+    </ul>
+    -->
