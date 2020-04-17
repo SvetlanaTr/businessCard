@@ -22,8 +22,12 @@ footer{ /*параметры для подвала*/
 h1{
     width: 80%;
 }
+p{
+    font-family: Arial, Georgia, Helvetica;/* задаю всем элементам на странице */
+}
 nav{
-    padding: 2%
+    padding: 2%;
+    z-index: 1;
 }
 nav a {
   text-decoration: none;
